@@ -39,7 +39,6 @@ let s:NiagaraDark         = "#565f73" "niagara - 1
 let s:Niagara             = "#96a6c8" "niagara
 let s:Wisteria            = "#9e95c7" "wisteria
 " Other custom colors
-let s:Gray                = '#2f2f2f' "gray
 let s:BlueGray            = '#686a73' "blueish gray
 let s:LightGray           = '#888888' "light gray
 
@@ -48,7 +47,6 @@ hi! link Repeat           Conditional
 hi! link Exception        Conditional
 hi! link Keyword          Conditional
 hi! link Structure        Conditional
-hi! link cConstant        Conditional
 hi! link Constant         Conditional
 hi! link StorageClass     Conditional
 hi! link Statement        Conditional
@@ -71,13 +69,14 @@ hi! link SpecialComment   Special
 hi! link Debug            Special
 hi! link Label            Special
 hi! link Tag              Special
+hi! link cConstant        Special
 
 call s:highlight('Todo', s:Brown, s:Background, 'bold')
 call s:highlight('LineNr', s:Background, s:BackgroundLightiest, '')
 call s:highlight('CursorLineNr', s:Background, s:Yellow, 'none')
 call s:highlight('StatusLine', s:BackgroundLight, s:Foreground, 'none')
 call s:highlight('VertSplit', s:BackgroundLight, s:BackgroundLight, '')
-call s:highlight('StatusLineNC', s:LightGray, s:Gray, '')
+call s:highlight('StatusLineNC', s:LightGray, s:BackgroundLight, '')
 call s:highlight('WildMenu', s:Yellow, '', 'bold')
 call s:highlight('Normal', s:Background, s:Foreground, '')
 call s:highlight('Visual', s:BackgroundLight, '', '')
