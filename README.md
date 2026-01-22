@@ -1,6 +1,6 @@
 
 # zoding.vim
-**The source file was adapted from [https://github.com/sica07/zoding-vim].**
+**The source file was adapted from https://github.com/sica07/zoding-vim.**
 
 An implementation of emac's [Gruber Darker theme](https://github.com/rexim/gruber-darker-theme) for Vim.
 
