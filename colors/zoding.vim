@@ -39,10 +39,9 @@ let s:NiagaraDark         = "#565f73" "niagara - 1
 let s:Niagara             = "#96a6c8" "niagara
 let s:Wisteria            = "#9e95c7" "wisteria
 " Other custom colors
-let s:BlueGray            = '#686a73' "blueish gray
 let s:LightGray           = '#888888' "light gray
 
-call s:highlight('Conditional', '', s:Yellow, 'bold')
+call s:highlight('Conditional', s:Background, s:Yellow, 'bold')
 hi! link Repeat           Conditional
 hi! link Exception        Conditional
 hi! link Keyword          Conditional
@@ -50,57 +49,65 @@ hi! link Structure        Conditional
 hi! link Constant         Conditional
 hi! link StorageClass     Conditional
 hi! link Statement        Conditional
-hi! link Operator         Conditional
+hi! link Label            Conditional
 
-call s:highlight('Comment', '', s:Brown, 'none')
-call s:highlight('Type', '', s:LightGray, 'none')
+call s:highlight('Comment', s:Background, s:Brown, 'none')
+hi! link SpecialComment   Comment
+
+call s:highlight('Type', s:Background, s:Quartz, 'none')
 hi! link Number           Type
 hi! link Float            Type
+hi! link PreProc          Type
 
-call s:highlight('PreProc', s:Background, s:Quartz, 'none')
-call s:highlight('Identifier', '', s:Niagara, 'bold')
-call s:highlight('SpecialChar', '', s:LightGreen, 'none')
-call s:highlight('String', '', s:Green, '')
+call s:highlight('Identifier', s:Background, s:Foreground, 'none')
+hi! link Operator         Identifier
+hi! link rustSigil        Identifier
+hi! link rustModPath      Identifier
+
+call s:highlight('Special', s:Background, s:LightGreen, 'none')
+hi! link SpecialChar      Special
+hi! link rustEscape       Special
+
+call s:highlight('String', s:Background, s:Green, 'none')
 hi! link Character        String
 
-call s:highlight('Special', '', s:LightGray, '')
-hi! link Delimiter        Special
-hi! link SpecialComment   Special
-hi! link Debug            Special
-hi! link Label            Special
-hi! link Tag              Special
-hi! link cConstant        Special
+call s:highlight('rustUnsafeKeyword', s:Background, s:Red, 'none')
+
+call s:highlight('Delimiter', s:Background, s:LightGray, 'none')
+hi! link Tag              Delimiter
+hi! link cConstant        Delimiter
 
 call s:highlight('Todo', s:Brown, s:Background, 'bold')
-call s:highlight('LineNr', s:Background, s:BackgroundLightiest, '')
+call s:highlight('LineNr', s:Background, s:BackgroundLightiest, 'none')
 call s:highlight('CursorLineNr', s:Background, s:Yellow, 'none')
 call s:highlight('StatusLine', s:BackgroundLight, s:Foreground, 'none')
-call s:highlight('VertSplit', s:BackgroundLight, s:BackgroundLight, '')
-call s:highlight('StatusLineNC', s:LightGray, s:BackgroundLight, '')
+call s:highlight('VertSplit', s:BackgroundLight, s:BackgroundLight, 'none')
+call s:highlight('StatusLineNC', s:LightGray, s:BackgroundLight, 'none')
 call s:highlight('WildMenu', s:Yellow, '', 'bold')
-call s:highlight('Normal', s:Background, s:Foreground, '')
-call s:highlight('Visual', s:BackgroundLight, '', '')
-call s:highlight('Directory', '', s:Green, '')
-call s:highlight('Title', s:Background, s:Yellow, '')
-call s:highlight('Search', s:ForegroundLighter, s:Black, '')
-call s:highlight('CurSearch', s:Yellow, s:Black, '')
+call s:highlight('Normal', s:Background, s:Foreground, 'none')
+call s:highlight('Visual', s:BackgroundLight, '', 'none')
+call s:highlight('Directory', s:Background, s:Green, 'none')
+call s:highlight('Title', s:Background, s:Yellow, 'none')
+call s:highlight('Search', s:ForegroundLighter, s:Black, 'none')
+call s:highlight('CurSearch', s:Yellow, s:Black, 'none')
 call s:highlight('Question', '', s:Niagara, 'none')
-call s:highlight('Folded', s:BackgroundLightest, s:Foreground, '')
-call s:highlight('Error', s:Red, s:Background, '')
+call s:highlight('Folded', s:BackgroundLightest, s:Foreground, 'none')
+call s:highlight('Error', s:Red, s:Background, 'none')
 call s:highlight('ErrorMsg', s:Background, s:Red, 'bold')
 call s:highlight('WarningMsg', s:Background, s:Brown, 'bold')
-call s:highlight('NonText', s:Background, s:BackgroundLight, '')
+call s:highlight('NonText', s:Background, s:BackgroundLight, 'none')
 hi! link SpecialKey       NonText
 
 " Not tested
+call s:highlight('Debug', s:Background, s:LightGray, 'none')
 call s:highlight('DiffAdd', s:Green, s:Background, '')
 call s:highlight('DiffAdded', s:Green, s:Background, '')
 call s:highlight('DiffDelete', s:Red, s:Background, '')
 call s:highlight('DiffDeleted', s:Red, s:Background, '')
 call s:highlight('DiffRemoved', s:Red, s:Background, '')
-call s:highlight('DiffChange', s:BlueGray, s:Background, '')
-call s:highlight('DiffChanged', s:BlueGray, s:Background, '')
-call s:highlight('DiffText', s:BlueGray, s:Background, '')
+call s:highlight('DiffChange', s:Niagara, s:Background, '')
+call s:highlight('DiffChanged', s:Niagara, s:Background, '')
+call s:highlight('DiffText', s:Niagara, s:Background, '')
 call s:highlight('Pmenu', s:Background, '', 'none')
 hi! link PmenuThumb       Pmenu
 finish
