@@ -50,6 +50,7 @@ hi! link Constant         Conditional
 hi! link StorageClass     Conditional
 hi! link Statement        Conditional
 hi! link Label            Conditional
+hi! link Operator         Conditional
 
 call s:highlight('Comment', s:Background, s:Brown, 'none')
 hi! link SpecialComment   Comment
@@ -60,9 +61,9 @@ hi! link Float            Type
 hi! link PreProc          Type
 
 call s:highlight('Identifier', s:Background, s:Foreground, 'none')
-hi! link Operator         Identifier
 hi! link rustSigil        Identifier
 hi! link rustModPath      Identifier
+hi! link rustOperator     Identifier
 
 call s:highlight('Special', s:Background, s:LightGreen, 'none')
 hi! link SpecialChar      Special
