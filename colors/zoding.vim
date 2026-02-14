@@ -77,6 +77,7 @@ call s:highlight('rustUnsafeKeyword', s:Background, s:Red, 'none')
 call s:highlight('Delimiter', s:Background, s:LightGray, 'none')
 hi! link Tag              Delimiter
 hi! link cConstant        Delimiter
+hi! link pythonBuiltin    Delimiter
 
 call s:highlight('Todo', s:Brown, s:Background, 'bold')
 call s:highlight('LineNr', s:Background, s:BackgroundLightiest, 'none')
