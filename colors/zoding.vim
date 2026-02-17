@@ -79,12 +79,16 @@ hi! link Tag              Delimiter
 hi! link cConstant        Delimiter
 hi! link pythonBuiltin    Delimiter
 
+call s:highlight('StatusLine', s:BackgroundLight, s:Foreground, 'none')
+hi! link StatusLineTerm   StatusLine
+
+call s:highlight('StatusLineNC', s:BackgroundLight, s:BackgroundLighter, 'none')
+hi! link StatusLineTermNC StatusLineNC
+
 call s:highlight('Todo', s:Brown, s:Background, 'bold')
 call s:highlight('LineNr', s:Background, s:BackgroundLightiest, 'none')
 call s:highlight('CursorLineNr', s:Background, s:Yellow, 'none')
-call s:highlight('StatusLine', s:BackgroundLight, s:Foreground, 'none')
 call s:highlight('VertSplit', s:BackgroundLight, s:BackgroundLight, 'none')
-call s:highlight('StatusLineNC', s:LightGray, s:BackgroundLight, 'none')
 call s:highlight('WildMenu', s:Yellow, '', 'bold')
 call s:highlight('Normal', s:Background, s:Foreground, 'none')
 call s:highlight('Visual', s:BackgroundLight, '', 'none')
